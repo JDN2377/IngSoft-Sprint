@@ -20,4 +20,9 @@ from page.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',login),
+
+    #Te lleva a catalogo si es exitosa si no a login
+    path('validarusuario',validarusuario),
+    path('login',login),
+    path('catalogo',catalogo),
 ]
