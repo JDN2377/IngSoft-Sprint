@@ -16,38 +16,41 @@
 
 <body>
     <!--Navbar-->
-    <div class="row">
-        <div class="col-1 text-end"><a href="catalogo"><img width="50px" height="50px" alt="100px" src="{% static 'img/—Pngtree—shopping%20bag_6794869.png' %}"></a></div>
-        <div class="col">
-            <a href="catalogo" style="text-decoration: none;"><h1 class="fs-1 fw-normal"><span style="color: rgb(247, 136, 7);">LARR</span><span style="color: rgb(255, 0, 0);">XPRESS</span></h1></a>
+    <div class="fixed-top">
+        <div class="row" style="background-color: rgb(255, 255, 255);">
+            <div class="col-1 text-end"><a href="catalogo"><img width="50px" height="50px" alt="100px" src="{% static 'img/—Pngtree—shopping%20bag_6794869.png' %}"></a></div>
+            <div class="col">
+                <a href="catalogo" style="text-decoration: none;"><h1 class="fs-1 fw-normal"><span style="color: rgb(247, 136, 7);">LARR</span><span style="color: rgb(255, 0, 0);">XPRESS</span></h1></a>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <nav class="navbar navbar-light navbar-expand-md bg-danger navbar-fixed-top navigation-clean-button" style="background: rgb(34, 34, 34);border-radius: 20;border-top-left-radius: 20;border-top-right-radius: 20;border-bottom-right-radius: 20;border-bottom-left-radius: 20;border-style: none;padding-top: 0;padding-bottom: 10px;">
-                <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navcol-1" style="color: rgb(255,255,255);">
-                        <ul class="navbar-nav nav-right">
-                            <li class="nav-item"><a class="nav-link active fs-4" href="catalogo" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Catálogo</span></a></li>
-                            <li class="nav-item">
-                                <div class="nav-item dropdown subra" style="padding: 8px 18px;"><a class="dropdown-toggle fs-4" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255, 255, 255);padding: 0px;"><span style="color: rgb(255, 255, 255);">Categorias</span></a>
-                                    <div class="dropdown-menu"><a class="dropdown-item">Disponibles</a><a class="dropdown-item" href="#">No Disponibles</a></div>
-                                </div>
-                            </li>
-                            <li class="nav-item"><a class="nav-link fs-4" href="/about.html" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Ofertas</span></a></li>
-                            <li class="nav-item"><a class="nav-link fs-4" href="/contact.html" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Contáctanos</span></a></li>
-                            <li class="nav-item">
-                                <div class="nav-item dropdown subra" style="padding: 8px 18px;"><a class="dropdown-toggle fs-4" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255, 255, 255);padding: 0px;"><span style="color: rgb(255, 255, 255);">Mi Cuenta</span></a>
-                                    <div class="dropdown-menu"><a class="dropdown-item" href="login">Iniciar Sesión</a><a class="dropdown-item" href="login">Regístrate</a><a class="dropdown-item" href="">Mi Perfil</a></div>
-                                </div>
-                            </li>
-                        </ul>
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-light navbar-expand-md bg-danger navbar-fixed-top navigation-clean-button" style="background: rgb(34, 34, 34);border-radius: 20;border-top-left-radius: 20;border-top-right-radius: 20;border-bottom-right-radius: 20;border-bottom-left-radius: 20;border-style: none;padding-top: 0;padding-bottom: 10px;">
+                    <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navcol-1" style="color: rgb(255,255,255);">
+                            <ul class="navbar-nav nav-right">
+                                <li class="nav-item"><a class="nav-link active fs-4" href="catalogo" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Catálogo</span></a></li>
+                                <li class="nav-item">
+                                    <div class="nav-item dropdown subra" style="padding: 8px 18px;"><a class="dropdown-toggle fs-4" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255, 255, 255);padding: 0px;"><span style="color: rgb(255, 255, 255);">Categorias</span></a>
+                                        <div class="dropdown-menu"><a class="dropdown-item" href="catalogo">Accesorios electrónicos</a><a class="dropdown-item" href="catalogo">Alimentos para mascota</a></div>
+                                    </div>
+                                </li>
+                                <li class="nav-item"><a class="nav-link fs-4" href="catalogo" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Ofertas</span></a></li>
+                                <li class="nav-item"><a class="nav-link fs-4" href="catalogo" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Contáctanos</span></a></li>
+                                <li class="nav-item">
+                                    <div class="nav-item dropdown subra" style="padding: 8px 18px;"><a class="dropdown-toggle fs-4" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255, 255, 255);padding: 0px;"><span style="color: rgb(255, 255, 255);">Mi Cuenta</span></a>
+                                        <div class="dropdown-menu"><a class="dropdown-item" href="login">Iniciar Sesión</a><a class="dropdown-item" href="login">Regístrate</a><a class="dropdown-item" href="">Mi Perfil</a></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </nav>
+                </nav>
+            </div>
         </div>
-    </div>
-    <!--Fin Navbar-->
+        </div>
+        <div class="separador"></div>
+        <!--Fin Navbar-->
 
     <!--login-->
     <div class="login-card"><img class="profile-img-card" src="{% static 'img/avatar_2x.png'%}">

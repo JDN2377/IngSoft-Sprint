@@ -16,7 +16,8 @@
 
 <body>
     <!--Navbar-->
-    <div class="row">
+    <div class="fixed-top">
+    <div class="row" style="background-color: rgb(255, 255, 255);">
         <div class="col-1 text-end"><a href="catalogo"><img width="50px" height="50px" alt="100px" src="{% static 'img/—Pngtree—shopping%20bag_6794869.png' %}"></a></div>
         <div class="col">
             <a href="catalogo" style="text-decoration: none;"><h1 class="fs-1 fw-normal"><span style="color: rgb(247, 136, 7);">LARR</span><span style="color: rgb(255, 0, 0);">XPRESS</span></h1></a>
@@ -31,11 +32,11 @@
                             <li class="nav-item"><a class="nav-link active fs-4" href="catalogo" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Catálogo</span></a></li>
                             <li class="nav-item">
                                 <div class="nav-item dropdown subra" style="padding: 8px 18px;"><a class="dropdown-toggle fs-4" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255, 255, 255);padding: 0px;"><span style="color: rgb(255, 255, 255);">Categorias</span></a>
-                                    <div class="dropdown-menu"><a class="dropdown-item">Disponibles</a><a class="dropdown-item" href="#">No Disponibles</a></div>
+                                    <div class="dropdown-menu"><a class="dropdown-item" href="#electronicos">Accesorios electrónicos</a><a class="dropdown-item" href="#alimentos">Alimentos para mascota</a></div>
                                 </div>
                             </li>
-                            <li class="nav-item"><a class="nav-link fs-4" href="/about.html" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Ofertas</span></a></li>
-                            <li class="nav-item"><a class="nav-link fs-4" href="/contact.html" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Contáctanos</span></a></li>
+                            <li class="nav-item"><a class="nav-link fs-4" href="catalogo" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Ofertas</span></a></li>
+                            <li class="nav-item"><a class="nav-link fs-4" href="catalogo" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Contáctanos</span></a></li>
                             <li class="nav-item">
                                 <div class="nav-item dropdown subra" style="padding: 8px 18px;"><a class="dropdown-toggle fs-4" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255, 255, 255);padding: 0px;"><span style="color: rgb(255, 255, 255);">Mi Cuenta</span></a>
                                     <div class="dropdown-menu"><a class="dropdown-item" href="login">Iniciar Sesión</a><a class="dropdown-item" href="login">Regístrate</a><a class="dropdown-item" href="">Mi Perfil</a></div>
@@ -47,11 +48,199 @@
             </nav>
         </div>
     </div>
+    </div>
+    <div class="separador"></div>
     <!--Fin Navbar-->
 
-    
-
+    <b id="electronicos"></b>
     <header class="bgcategoria">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Accesorios Electrónicos</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Productos electrónicos al mejor precio!</p>
+            </div>
+        </div>
+      </header>
+      
+      <section class="py-5">
+          
+          <!-- NO IMPLEMENADO!!!!!!  -faltaCorchete-% for foto in fotos %}-->
+          <!--muestra los datos de una foto-->
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="{% static 'img\1.jpg' %}" alt="...">
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <!-- Product price-->
+                                $40.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="boton-añadir-al-carro btn mt-auto" >Añadir al carro</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Oferta! badge-->
+                        <div class="badge esquina-oferta text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta!</div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="{% static 'img\1.jpg' %}" alt="...">
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Special Item</h5>
+                                <!-- Product price-->
+                                <span class="text-muted text-decoration-line-through">$20.00</span>
+                                $18.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn boton-añadir-al-carro mt-auto" >Añadir al carro</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Oferta! badge-->
+                        <div class="badge esquina-oferta text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta!</div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="{% static 'img\1.jpg' %}" alt="...">
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Oferta! Item</h5>
+                                <!-- Product price-->
+                                <span class="text-muted text-decoration-line-through">$50.00</span>
+                                $25.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn boton-añadir-al-carro mt-auto" >Añadir al carro</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="{% static 'img\1.jpg' %}" alt="...">
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Popular Item</h5>
+                                <!-- Product price-->
+                                $40.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn boton-añadir-al-carro mt-auto" >Añadir al carro</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Oferta! badge-->
+                        <div class="badge esquina-oferta text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta!</div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="{% static 'img\1.jpg' %}" alt="...">
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Oferta! Item</h5>
+                                <!-- Product price-->
+                                <span class="text-muted text-decoration-line-through">$50.00</span>
+                                $25.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn boton-añadir-al-carro mt-auto" >Añadir al carro</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="{% static 'img\1.jpg' %}" alt="...">
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <!-- Product price-->
+                                $280.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn boton-añadir-al-carro mt-auto" >Añadir al carro</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Oferta! badge-->
+                        <div class="badge esquina-oferta text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta!</div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="{% static 'img\1.jpg' %}" alt="...">
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Special Item</h5>
+                                <!-- Product price-->
+                                <span class="text-muted text-decoration-line-through">$20.00</span>
+                                $18.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn boton-añadir-al-carro mt-auto" >Añadir al carro</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="{% static 'img\1.jpg' %}" alt="...">
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Popular Item</h5>
+                                <!-- Product price-->
+                                $40.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn boton-añadir-al-carro mt-auto" >Añadir al carro</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+
+
+      <b id="alimentos"></b>
+      <!--Alimentos-------------------------------------------------------------->
+      <header class="bgcategoria">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
                 <h1 class="display-4 fw-bolder">Alimentos</h1>
