@@ -1,4 +1,4 @@
-from .models import Usuario
+from .models import Usuario, Audifonos, Microfonos, Pilas, Reloj
 from http.client import HTTPResponse
 from urllib import response
 from django.shortcuts import redirect, render
@@ -10,8 +10,12 @@ def login(request):
     return render(request, 'login.html')
 
 def catalogo(request):
-    return render(request,'catalogo.html')
-
+    audifonos = Audifonos.objects.all()
+    microfonos = Microfonos.objects.all()
+    pilas = Pilas.objects.all()
+    reloj = Reloj.objects.all()
+    datos1 = {'audifonos': audifonos, 'microfonos': microfonos, 'pilas': pilas, 'reloj': reloj}
+    return render(request,'catalogo.html', datos1)
 
 #--Funcion para validar el usuario--
 def validarusuario(request):
