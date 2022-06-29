@@ -25,4 +25,9 @@ urlpatterns = [
     path('validarusuario',validarusuario),
     path('login',login),
     path('catalogo',catalogo),
+    path('signup',signup),
+    path('register',register),
+    path('cerrarsesion',cerrarsesion),
+    path('logout',logout),
+    path('perfil',perfil),
 ]
