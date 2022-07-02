@@ -1,0 +1,225 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>LarrXpress</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <link rel="stylesheet" href="{% static 'css/Black-Navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dropdown-search-bs4.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Google-Style-Login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <!--Navbar-->
+    <div class="fixed-top">
+        <div class="row" style="background-color: rgb(255, 255, 255);">
+            <div class="col-1 text-end"><a href="catalogo"><img width="50px" height="50px" alt="100px" src="{% static 'img/—Pngtree—shopping%20bag_6794869.png' %}"></a></div>
+            <div class="col">
+                <a href="catalogo" style="text-decoration: none;"><h1 class="fs-1 fw-normal"><span style="color: rgb(247, 136, 7);">LARR</span><span style="color: rgb(255, 0, 0);">XPRESS</span></h1></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-light navbar-expand-md bg-danger navbar-fixed-top navigation-clean-button" style="background: rgb(34, 34, 34);border-radius: 20;border-top-left-radius: 20;border-top-right-radius: 20;border-bottom-right-radius: 20;border-bottom-left-radius: 20;border-style: none;padding-top: 0;padding-bottom: 10px;">
+                    <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navcol-1" style="color: rgb(255,255,255);">
+                            <ul class="navbar-nav nav-right">
+                                <li class="nav-item"><a class="nav-link active fs-4" href="catalogo" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Catálogo</span></a></li>
+                                <li class="nav-item">
+                                    <div class="nav-item dropdown subra" style="padding: 8px 18px;"><a class="dropdown-toggle fs-4" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255, 255, 255);padding: 0px;"><span style="color: rgb(255, 255, 255);">Categorias</span></a>
+                                        <div class="dropdown-menu"><a class="dropdown-item" href="catalogo">Accesorios electrónicos</a><a class="dropdown-item" href="catalogo">Alimentos para mascota</a></div>
+                                    </div>
+                                </li>
+                                <li class="nav-item"><a class="nav-link fs-4" href="catalogo" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Ofertas</span></a></li>
+                                <li class="nav-item"><a class="nav-link fs-4" href="catalogo" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Contáctanos</span></a></li>
+                                <li class="nav-item">
+                                    <div class="nav-item dropdown subra" style="padding: 8px 18px;"><a class="dropdown-toggle fs-4" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255, 255, 255);padding: 0px;"><span style="color: rgb(255, 255, 255);">Mi Cuenta</span></a>
+                                        <div class="dropdown-menu"><a class="dropdown-item" href="login">Iniciar Sesión</a><a class="dropdown-item" href="signup">Regístrate</a><a class="dropdown-item" href="">Mi Perfil</a></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        </div>
+        <div class="separador"></div>
+        <!--Fin Navbar-->
+
+    <!--Perfil-->
+    <br><br>
+    <div class="container">
+        <div class="row flex-lg-nowrap">
+          <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
+            <div class="card p-3 border-primary">
+              <div class="e-navlist e-navlist--active-bg">
+                <ul class="nav">
+                  <li class="nav-item"><a class="nav-link px-2 active" href="/solicitudes"><i
+                        class="fa fa-fw fa-bar-chart mr-1"></i><span>Solicitudes</span></a></li>
+                  <li class="nav-item"><a class="nav-link px-2" href="historialCompras.html"
+                      target="__blank"><i class="fa fa-fw fa-th mr-1"></i><span>Historial</span></a></li>
+                  <li class="nav-item"><a class="nav-link px-2"
+                      href="#" target="__blank"><i
+                        class="fa fa-fw fa-cog mr-1"></i><span>Configuraciones</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="col mb-3 ">
+                <div class="card border-primary">
+                  <div class="card-body">
+                    <div class="e-profile">
+                      <ul class="nav nav-tabs">
+                        <li class="nav-item"><a href="" class="active nav-link">Configuraciones</a></li>
+                      </ul>
+                      <div class="tab-content pt-3">
+                        <div class="tab-pane active">
+                          <form class="form" novalidate="">
+                            <div class="row">
+                              <div class="col">
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="form-group">
+                                      <label>Nombre completo</label>
+                                      <input class="form-control" type="text" name="name" placeholder="Wuff"
+                                        value=>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <div class="form-group">
+                                      <label>Nombre de usuario</label>
+                                      <input class="form-control" type="text" name="username" placeholder="Wuff"
+                                        value="">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="form-group">
+                                      <label>Correo electrónico</label>
+                                      <input class="form-control" type="text" placeholder="wuff@weed.com">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="form-group">
+                                      <label>Dirección de entrega</label>
+                                      <input class="form-control" type="text" placeholder="Av falsa 123">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-12 col-sm-6 mb-3">
+                                <div class="mb-2"><b>Cambiar contraseña</b></div>
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="form-group">
+                                      <label>Contraseña</label>
+                                      <input class="form-control" type="password" placeholder="••••••">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="form-group">
+                                      <label>Nueva contraseña</label>
+                                      <input class="form-control" type="password" placeholder="••••••">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="form-group">
+                                      <label>Confirmar <span class="d-none d-xl-inline">contraseña</span></label>
+                                      <input class="form-control" type="password" placeholder="••••••">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-12 col-sm-5 offset-sm-1 mb-3">
+                                <div class="mb-2"><b>Sigamos en contacto</b></div>
+                                <div class="row">
+                                  <div class="col">
+                                    <label>Notificaciones al correo</label>
+                                    <div class="custom-controls-stacked px-2">
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="notifications-blog"
+                                          checked="">
+                                        <label class="custom-control-label" for="notifications-blog">Publicaciones online</label>
+                                      </div>
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="notifications-news"
+                                          checked="">
+                                        <label class="custom-control-label" for="notifications-news">Boletín informativo</label>
+                                      </div>
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="notifications-offers"
+                                          checked="">
+                                        <label class="custom-control-label" for="notifications-offers">Ofertas</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col d-flex justify-content-end">
+                                <button class="btn btn-primary" type="submit">Guardar cambios</button>
+                              </div>
+                            </div>
+                          </form>
+    
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-3 mb-3">
+                <div class="card mb-3 border-primary">
+                  <div class="card-body">
+                    <div class="px-xl-3">
+                      <form action="/cerrarsesion" method="post" name="logoutButton"><!--form logout-->
+                        {% csrf_token %}
+                        <button class="btn btn-block btn-secondary" type="submit">
+                          <i class="fa fa-sign-out"></i>
+                          <span id="cierreSesion">Cerrar sesión</span>
+                        </button>
+                      </form>  
+                    </div>
+                  </div>
+                </div>
+                <div class="card border-primary">
+                  <div class="card-body">
+                    <h6 class="card-title font-weight-bold">Soporte</h6>
+                    <button type="button" class="btn btn-primary">Contáctanos</button><br><br>
+                    <button type="button" class="btn btn-danger">Eliminar cuenta</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+    <!--Perfil-->
+
+    <div>
+        <div class="footer-2"></div>
+    </div>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/dropdown-search-bs4.js' %}"></script>
+</body>
+
+</html>
