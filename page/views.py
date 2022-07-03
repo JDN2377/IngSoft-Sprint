@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from .models import Usuario, Audifonos, Microfonos, Pilas, Reloj
+from .models import Usuario, Audifonos, Microfonos, Pilas, Reloj, Solicitud
 from http.client import HTTPResponse
 from urllib import response
 from django.shortcuts import redirect, render
@@ -23,11 +23,17 @@ def catalogo(request):
 def signup(request):
     return render(request,'signup.html')
 
+def supervisor(request):
+    return render(request,'supervisor.html')
+
+
 def perfil(request):
     return render(request,'perfil.html')
 
 def solicitudes(request):
-    return render(request,'solicitudes.html')
+    solicitud = Solicitud.objects.all()
+    datos={'solicitud':solicitud}
+    return render(request,'solicitudes.html', datos)
 
 def register(request):
     r_correo = request.POST.get('email')
@@ -48,6 +54,32 @@ def cerrarsesion(request):
         return redirect('/login')
     else:
         return redirect('/login')
+    
+
+
+def enviarsolicitud(request):
+    v_idsolicitud=request.POST.get('idsolicitud')
+    v_producto_solicitado=request.POST.get('producto_solicitado')
+    v_cantidad_deseada=request.POST.get('cantidad_deseada')
+
+    nuevo=Solicitud()
+    nuevo.idsolicitud=v_idsolicitud
+    nuevo.producto_solicitado=v_producto_solicitado
+    nuevo.cantidad_deseada=v_cantidad_deseada
+
+    Solicitud.save(nuevo)
+
+    return redirect('/catalogo')
+
+
+def eliminarsolicitud(request, p_idsolicitud):
+    buscado=Solicitud.objects.get(idsolicitud=p_idsolicitud)
+    if(buscado):
+        Solicitud.delete(buscado)
+        return redirect('/solicitudes')
+
+
+
 
 
 
@@ -62,7 +94,7 @@ def validarusuario(request):
 
         if usu:
             request.session['usuario'] = v_correo
-            return redirect('/perfil')
+            return redirect('/supervisor')
     except:
         return redirect('/login')
 

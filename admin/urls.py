@@ -22,6 +22,9 @@ urlpatterns = [
     path('',login),
 
     #Te lleva a catalogo si es exitosa si no a login
+    path('enviarsolicitud',enviarsolicitud),
+    path('eliminarsolicitud/<p_idsolicitud>',eliminarsolicitud),
+    path('supervisor',supervisor),
     path('validarusuario',validarusuario),
     path('login',login),
     path('catalogo',catalogo),

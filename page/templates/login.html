@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/dropdown-search-bs4.css' %}">
     <link rel="stylesheet" href="{% static 'css/Google-Style-Login.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
 <body>
@@ -32,15 +33,20 @@
                                 <li class="nav-item"><a class="nav-link active fs-4" href="catalogo" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Catálogo</span></a></li>
                                 <li class="nav-item">
                                     <div class="nav-item dropdown subra" style="padding: 8px 18px;"><a class="dropdown-toggle fs-4" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255, 255, 255);padding: 0px;"><span style="color: rgb(255, 255, 255);">Categorias</span></a>
-                                        <div class="dropdown-menu"><a class="dropdown-item" href="catalogo">Accesorios electrónicos</a><a class="dropdown-item" href="catalogo">Alimentos para mascota</a></div>
+                                        <div class="dropdown-menu"><a class="dropdown-item" href="#electronicos">Accesorios electrónicos</a><a class="dropdown-item" href="#alimentos">Alimentos para mascota</a></div>
                                     </div>
                                 </li>
                                 <li class="nav-item"><a class="nav-link fs-4" href="catalogo" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Ofertas</span></a></li>
                                 <li class="nav-item"><a class="nav-link fs-4" href="catalogo" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Contáctanos</span></a></li>
                                 <li class="nav-item">
-                                    <div class="nav-item dropdown subra" style="padding: 8px 18px;"><a class="dropdown-toggle fs-4" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255, 255, 255);padding: 0px;"><span style="color: rgb(255, 255, 255);">Mi Cuenta</span></a>
-                                        <div class="dropdown-menu"><a class="dropdown-item" href="login">Iniciar Sesión</a><a class="dropdown-item" href="signup">Regístrate</a><a class="dropdown-item" href="">Mi Perfil</a></div>
-                                    </div>
+                                </li>
+                                <li class="nav-item"><a class="nav-link active fs-4" id="liveToastBtn" type="button" style="color: rgba(224,217,217,0.9);"><span style="color: rgb(255, 255, 255);">Solicitar producto</span></a></li>
+                                <li>
+                                    <a class=" d-flex p-0" href="/perfil">
+                                        <button class="boton-perfil btn" type="submit">
+                                            <i class="persona-perfil bi bi-person-lines-fill"></i>
+                                        </button>
+                                    </a><!--Imagen Persona hypervinculo a Perfil/inicio de sesión-->
                                 </li>
                             </ul>
                         </div>
@@ -50,6 +56,50 @@
         </div>
         </div>
         <div class="separador"></div>
+        <!--Toast Solicitar producto-->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3" style="position:absolute; z-index:1">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="toast-header">
+                <img src="{% static 'img/—Pngtree—shopping%20bag_6794869.png' %}" style="max-height: 30px;">
+                <strong class="me-auto">Solicita un producto</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+              <div class="toast-body">
+                <form method="post" action="enviarsolicitud" id="formulario">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="idproducto">ID Solicitud</label>
+                        <input type="number" id="idsolicitud" name="idsolicitud" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Producto</label>
+                        <input type="text" id="producto_solicitado" name="producto_solicitado" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="precio">Cantidad deseada</label>
+                        <input type="number" id="cantidad_deseada" name="cantidad_deseada" class="form-control">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" id="enviar" value="Enviar">
+                        <input type="reset" class="btn btn-secondary" id="limpiar" value="Limpiar">
+                </div>
+                </form>
+              </div>
+            </div>
+        </div>
+          <!--Script del Toast-->
+        <script>
+            const toastTrigger = document.getElementById('liveToastBtn')
+                const toastLiveExample = document.getElementById('liveToast')
+                if (toastTrigger) {
+                    toastTrigger.addEventListener('click', () => {
+                        const toast = new bootstrap.Toast(toastLiveExample)
+    
+                        toast.show()
+                    })
+                }
+        </script>
         <!--Fin Navbar-->
 
     <!--login-->
