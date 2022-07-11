@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from .models import Usuario, Audifonos, Microfonos, Pilas, Reloj, Solicitud
+from .models import *
 from http.client import HTTPResponse
 from urllib import response
 from django.shortcuts import redirect, render
@@ -24,7 +24,9 @@ def signup(request):
     return render(request,'signup.html')
 
 def supervisor(request):
-    return render(request,'supervisor.html')
+    v_productos=Producto.objects.all()
+    datos={'productos':v_productos}
+    return render(request,'supervisor.html', datos)
 
 
 def perfil(request):
@@ -78,6 +80,53 @@ def eliminarsolicitud(request, p_idsolicitud):
         Solicitud.delete(buscado)
         return redirect('/solicitudes')
 
+def guardarProducto(request):
+    
+    v_idproducto=request.POST.get('idproducto')
+    v_nomproducto=request.POST.get('nombre')
+    v_imagen=request.POST.get('imagen')
+    v_preproducto=request.POST.get('precio')
+    v_stockproducto=request.POST.get('stock')
+
+    nuevo=Producto()
+    nuevo.idProducto=v_idproducto
+    nuevo.nombreProducto=v_nomproducto
+    nuevo.imagen=v_imagen
+    nuevo.stock=v_stockproducto
+    nuevo.precio=v_preproducto
+
+    Producto.save(nuevo)
+
+    return redirect('/supervisor/')
+    
+def eliminarProducto(request, p_idProducto):
+    buscado=Producto.objects.get(idProducto=p_idProducto)
+    if(buscado):
+        Producto.delete(buscado)
+        return redirect('/supervisor/')
+
+def buscarProducto(request, p_idProducto):
+    buscado=Producto.objects.get(idProducto=p_idProducto)
+    datos={'producto': buscado}
+    return render(request, 'modificar.html', datos)
+
+def guardarProductoModificado(request):
+    v_idproducto=request.POST.get('idproducto')
+    v_nomproducto=request.POST.get('nombre')
+    v_imagen=request.POST.get('imagen')
+    v_preproducto=request.POST.get('precio')
+    v_stockproducto=request.POST.get('stock')
+
+    buscado=Producto.objects.get(idProducto=v_idproducto)
+
+    if(buscado):
+        buscado.nombreProducto=v_nomproducto
+        buscado.imagen=v_imagen
+        buscado.stock=v_stockproducto
+        buscado.precio=v_preproducto
+
+        Producto.save(buscado)
+        return redirect('/supervisor/')
 
 
 
