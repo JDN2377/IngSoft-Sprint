@@ -11,6 +11,23 @@ class Usuario(models.Model):
     def __str__(self):
         return self.nombre
 
+class Producto(models.Model):
+    idProducto = models.IntegerField(primary_key=True, verbose_name="ID Producto")
+    nombreProducto=models.CharField(max_length=30, verbose_name="Nombre Producto")
+    imagen=models.CharField(max_length=256, null=True)
+    precio=models.IntegerField(verbose_name="Precio Producto")
+    stock=models.IntegerField(verbose_name="Stock Producto")
+    def __str__(self):
+        return (self.nombreProducto)
+
+class Solicitud(models.Model):
+    idsolicitud = models.IntegerField(primary_key=True, verbose_name='Id de solicitud')
+    producto_solicitado = models.CharField(max_length=60, verbose_name='Producto solicitado')
+    cantidad_deseada = models.IntegerField(verbose_name='Cantidad deseada')
+
+    def __str__(self):
+        return self.producto_solicitado
+
 class Audifonos(models.Model):
     idAudifonos =models.IntegerField(primary_key=True, verbose_name='Id de Audifonos')
     nombreAudifonos =models.CharField(max_length=50, verbose_name='Nombre de Audifonos')
