@@ -101,21 +101,25 @@
                 }
         </script>
         <!--Fin Navbar-->
-
-    <!--Signup-->
-    <div class="login-card"><img class="profile-img-card" src="{% static 'img/avatar_2x.png'%}">
-        {% include 'message.html' %}
-        <p class="profile-name-card"> </p>
-        <form class="form-signin" action="/register" method="post" name="signup">
-            {% csrf_token %}
-            <span class="reauth-email"> </span>
-            <input class="form-control" type="text" id="nombre" name="nombre" required="" placeholder="Nombre " autofocus="">
-            <input class="form-control" type="email" id="email" name="email" required="" placeholder="Email " autofocus="">
-            <input class="form-control" type="password" id="password" name="password" required="" placeholder="Contraseña">
-            <div class="checkbox"></div><button class="btn btn-primary btn-lg d-block btn-signin w-100" type="submit">Crear Cuenta</button>
-        </form>
+    <div class="container d-flex justify-content-center">
+        <div class="row">
+            <table class="table table-stripped">
+                <th>Id</th>
+                <th>Producto solicitado</th>
+                <th>Cantidad deseada</th>
+                <th>Acciones</th>
+                {% for solicitud in solicitud %}
+                <tr>
+                    <td>{{solicitud.idsolicitud}}</td>
+                    <td>{{solicitud.producto_solicitado}}</td>
+                    <td>{{solicitud.cantidad_deseada}}</td>
+                    <td><a href="eliminarsolicitud/{{solicitud.idsolicitud}}">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
     </div>
-    <!--FIN Signup-->
+    
 
     <div>
         <div class="footer-2"></div>
