@@ -21,7 +21,6 @@ class Producto(models.Model):
         return (self.nombreProducto)
 
 class Solicitud(models.Model):
-    idsolicitud = models.IntegerField(primary_key=True, verbose_name='Id de solicitud')
     producto_solicitado = models.CharField(max_length=60, verbose_name='Producto solicitado')
     cantidad_deseada = models.IntegerField(verbose_name='Cantidad deseada')
 

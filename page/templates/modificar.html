@@ -22,7 +22,7 @@
             </div>
             <div class="modal-body">
               <div class="py-1">
-                <form class="form" method="post" action="/guardarProductoCambiado/" id="formulario">
+                <form class="form" method="post" action="/guardarProductoCambiado" id="formulario">
                 {% csrf_token %}
                   <div class="row">
                     <div class="col">
@@ -30,7 +30,7 @@
                         <div class="col-2">
                           <div class="form-group">
                             <label>ID Producto</label>
-                            <input class="form-control" type="number" name="idproducto" name="idproducto" placeholder="ID" id="idproducto" value="{{producto.idProducto}}">
+                            <input class="form-control" type="number" name="idproducto" name="idproducto" placeholder="ID" id="idproducto" readonly value="{{producto.idProducto}}">
                           </div>
                         </div>
                       </div>
@@ -70,7 +70,6 @@
                     </div>
                   </div>
                 </form>
-  
               </div>
             </div>
           </div>

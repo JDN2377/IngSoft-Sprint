@@ -60,12 +60,10 @@ def cerrarsesion(request):
 
 
 def enviarsolicitud(request):
-    v_idsolicitud=request.POST.get('idsolicitud')
     v_producto_solicitado=request.POST.get('producto_solicitado')
     v_cantidad_deseada=request.POST.get('cantidad_deseada')
 
     nuevo=Solicitud()
-    nuevo.idsolicitud=v_idsolicitud
     nuevo.producto_solicitado=v_producto_solicitado
     nuevo.cantidad_deseada=v_cantidad_deseada
 
@@ -75,7 +73,7 @@ def enviarsolicitud(request):
 
 
 def eliminarsolicitud(request, p_idsolicitud):
-    buscado=Solicitud.objects.get(idsolicitud=p_idsolicitud)
+    buscado=Solicitud.objects.get(id=p_idsolicitud)
     if(buscado):
         Solicitud.delete(buscado)
         return redirect('/solicitudes')
@@ -97,13 +95,13 @@ def guardarProducto(request):
 
     Producto.save(nuevo)
 
-    return redirect('/supervisor/')
+    return redirect('/supervisor')
     
 def eliminarProducto(request, p_idProducto):
     buscado=Producto.objects.get(idProducto=p_idProducto)
     if(buscado):
         Producto.delete(buscado)
-        return redirect('/supervisor/')
+        return redirect('/supervisor')
 
 def buscarProducto(request, p_idProducto):
     buscado=Producto.objects.get(idProducto=p_idProducto)
@@ -126,7 +124,7 @@ def guardarProductoModificado(request):
         buscado.precio=v_preproducto
 
         Producto.save(buscado)
-        return redirect('/supervisor/')
+        return redirect('/supervisor')
 
 
 
@@ -143,7 +141,7 @@ def validarusuario(request):
 
         if usu:
             request.session['usuario'] = v_correo
-            return redirect('/supervisor')
+            return redirect('/catalogo')
     except:
         return redirect('/login')
 
