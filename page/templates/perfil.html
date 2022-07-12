@@ -57,37 +57,33 @@
       </div>
       <div class="separador"></div>
       <!--Toast Solicitar producto-->
-      <div class="toast-container position-fixed bottom-0 end-0 p-3" style="position:absolute; z-index:1">
-          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-              <img src="{% static 'img/—Pngtree—shopping%20bag_6794869.png' %}" style="max-height: 30px;">
-              <strong class="me-auto">Solicita un producto</strong>
-              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-              <form method="post" action="enviarsolicitud" id="formulario">
-                  {% csrf_token %}
-                  <div class="form-group">
-                      <label for="idproducto">ID Solicitud</label>
-                      <input type="number" id="idsolicitud" name="idsolicitud" class="form-control">
-                  </div>
-                  <div class="form-group">
-                      <label for="nombre">Producto</label>
-                      <input type="text" id="producto_solicitado" name="producto_solicitado" class="form-control">
-                  </div>
-                  <div class="form-group">
-                      <label for="precio">Cantidad deseada</label>
-                      <input type="number" id="cantidad_deseada" name="cantidad_deseada" class="form-control">
-                  </div>
-                  <br>
-                  <div class="form-group">
-                      <input type="submit" class="btn btn-primary" id="enviar" value="Enviar">
-                      <input type="reset" class="btn btn-secondary" id="limpiar" value="Limpiar">
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="position:absolute; z-index:1">
+      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="{% static 'img/—Pngtree—shopping%20bag_6794869.png' %}" style="max-height: 30px;">
+          <strong class="me-auto">Solicita un producto</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          <form method="post" action="enviarsolicitud" id="formulario">
+              {% csrf_token %}
+              <div class="form-group">
+                  <label for="nombre">Producto</label>
+                  <input type="text" id="producto_solicitado" name="producto_solicitado" class="form-control">
               </div>
-              </form>
-            </div>
+              <div class="form-group">
+                  <label for="precio">Cantidad deseada</label>
+                  <input type="number" id="cantidad_deseada" name="cantidad_deseada" class="form-control">
+              </div>
+              <br>
+              <div class="form-group">
+                  <input type="submit" class="btn btn-primary" id="enviar" value="Enviar">
+                  <input type="reset" class="btn btn-secondary" id="limpiar" value="Limpiar">
           </div>
+          </form>
+        </div>
       </div>
+  </div>
         <!--Script del Toast-->
       <script>
           const toastTrigger = document.getElementById('liveToastBtn')
@@ -112,8 +108,8 @@
                 <ul class="nav">
                   <li class="nav-item"><a class="nav-link px-2 active" href="/solicitudes"><i
                         class="fa fa-fw fa-bar-chart mr-1"></i><span>Solicitudes</span></a></li>
-                  <li class="nav-item"><a class="nav-link px-2" href="historialCompras.html"
-                      target="__blank"><i class="fa fa-fw fa-th mr-1"></i><span>Historial</span></a></li>
+                  <li class="nav-item"><a class="nav-link px-2" href="supervisor"
+                      target="__blank"><i class="fa fa-fw fa-th mr-1"></i><span>Supervisor</span></a></li>
                   <li class="nav-item"><a class="nav-link px-2"
                       href="#" target="__blank"><i
                         class="fa fa-fw fa-cog mr-1"></i><span>Configuraciones</span></a></li>
